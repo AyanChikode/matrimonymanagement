@@ -1,0 +1,59 @@
+<div class="container mt-4">
+
+<form
+[formGroup]="registerForm"
+(ngSubmit)="register()">
+
+<div class="col-md-6 mb-3">
+  <label>Name</label>
+  <input
+    class="form-control"
+    formControlName="customerName">
+</div>
+
+<div class="col-md-6 mb-3">
+  <label>Email</label>
+  <input
+    class="form-control"
+    formControlName="email">
+</div>
+
+<div class="col-md-6 mb-3">
+  <label>Password</label>
+  <input
+    type="password"
+    class="form-control"
+    formControlName="password">
+</div>
+
+<div class="col-md-6 mb-3">
+  <label>Phone</label>
+  <input
+    class="form-control"
+    formControlName="phoneNo" >
+</div>
+
+<div class="mb-3">
+  <label>Register As</label>
+
+  <select
+    class="form-select"
+    formControlName="role">
+
+    <option value="CUSTOMER">Customer</option>
+    <option value="ADMIN">Admin</option>
+
+  </select>
+</div>
+
+<button
+class="btn btn-success">
+
+Register
+
+</button>
+
+</form>
+
+</div>
+

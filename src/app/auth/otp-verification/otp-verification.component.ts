@@ -48,19 +48,18 @@ export class OtpVerificationComponent implements OnInit {
 
         if(isResetPassword){
 
-          this.router.navigate([
-            '/new-password'
-          ]);
+             localStorage.removeItem('resetPassword');
 
-        }else{
-
-          localStorage.removeItem(
-            'verifyEmail'
-          );
-
-          this.router.navigate(['/']);
+             this.router.navigate(['/new-password']);
 
         }
+        else{
+
+              localStorage.removeItem('verifyEmail');
+
+              this.router.navigate(['/']);
+
+            }
 
       },
 

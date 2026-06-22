@@ -46,7 +46,7 @@ export class NewPasswordComponent {
 
           localStorage.removeItem(
             'verifyEmail'
-          );
+          );  
 
           localStorage.removeItem(
             'resetPassword'

@@ -37,25 +37,32 @@
 
                         </div>
 
+                        <!-- Forgot Password Link -->
+                        <div class="text-end mb-3">
+                            <a routerLink="/forgot-password">
+                                Forgot Password?
+                            </a>
+                        </div>
+
                         <div class="mb-3">
 
-<label>Login As</label>
+                            <label>Login As</label>
 
-<select
-class="form-select"
-formControlName="role">
+                            <select
+                                class="form-select"
+                                formControlName="role">
 
-  <option value="CUSTOMER">
-    Customer
-  </option>
+                                <option value="CUSTOMER">
+                                    Customer
+                                </option>
 
-  <option value="ADMIN">
-    Admin
-  </option>
+                                <option value="ADMIN">
+                                    Admin
+                                </option>
 
-</select>
+                            </select>
 
-</div>
+                        </div>
 
                         <button
                             class="btn btn-primary w-100">
@@ -63,16 +70,16 @@ formControlName="role">
                             Login
 
                         </button>
-                        
 
                         <div class="text-center mt-3">
-                            don't have an account?
 
-                            <a routerLink="/register">Register Here</a>
+                            Don't have an account?
+
+                            <a routerLink="/register">
+                                Register Here
+                            </a>
 
                         </div>
-
-                        
 
                     </form>
 

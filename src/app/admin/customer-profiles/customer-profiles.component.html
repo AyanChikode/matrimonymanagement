@@ -1,0 +1,53 @@
+<table class="table">
+
+<thead>
+<tr>
+
+<th>Name</th>
+<th>Age</th>
+<th>Gender</th>
+<th>Religion</th>
+<th>Caste</th>
+<th>Phone</th>
+<th>Action</th>
+
+</tr>
+</thead>
+
+<tbody>
+
+<tr *ngFor="let p of profiles">
+
+<td>{{p.customerName}}</td>
+<td>{{p.age}}</td>
+<td>{{p.gender}}</td>
+
+<td>
+ {{p.religion_id?.religion_name}}
+</td>
+
+<td>
+ {{p.caste_id?.caste_name}}
+</td>
+
+<td>{{p.phoneNo}}</td>
+
+<td>
+
+<button
+ class="btn btn-primary btn-sm">
+ View
+</button>
+
+<button
+ class="btn btn-danger btn-sm">
+ Delete
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>

@@ -1,1 +1,153 @@
-<p>admin-dashboard works!</p>
+<div class="wrapper">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+
+    <div class="logo">
+      <h4>Matrimony</h4>
+    </div>
+
+    <ul class="menu">
+
+      <li class="active">
+        <i class="fas fa-home"></i>
+        Dashboard
+      </li>
+
+      <li>
+        <i class="fas fa-users"></i>
+        Customers
+      </li>
+
+      <li>
+        <i class="fas fa-building"></i>
+        Consultancies
+      </li>
+
+      <li>
+        <i class="fas fa-heart"></i>
+        Religions
+      </li>
+
+      <li>
+        <i class="fas fa-list"></i>
+        Castes
+      </li>
+
+      <li>
+        <i class="fas fa-map"></i>
+        Locations
+      </li>
+
+    </ul>
+
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- Navbar -->
+    <div class="top-navbar">
+
+      <h3>Admin Dashboard</h3>
+
+      <div class="profile">
+
+        <span>Welcome Admin</span>
+
+        <button
+          class="btn btn-danger btn-sm ms-3"
+          (click)="logout()">
+
+          Logout
+
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- Cards -->
+    <div class="row mt-4">
+
+      <div class="col-md-3 mb-3">
+        <div class="card dashboard-card">
+          <h5>Customers</h5>
+          <h2>{{totalCustomers}}</h2>
+        </div>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <div class="card dashboard-card">
+          <h5>Consultancies</h5>
+          <h2>{{totalConsultancies}}</h2>
+        </div>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <div class="card dashboard-card">
+          <h5>Religions</h5>
+          <h2>{{totalReligions}}</h2>
+        </div>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <div class="card dashboard-card">
+          <h5>Castes</h5>
+          <h2>{{totalCastes}}</h2>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-3">
+      <div class="card dashboard-card">
+        <div class="card-body">
+
+          <h5>Total Profiles</h5>
+
+          <h2>
+            {{ totalProfiles }}
+          </h2>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Customers -->
+
+    <div class="card mt-4 p-3">
+
+      <h4>Recent Customers</h4>
+
+      <table class="table table-striped mt-3">
+
+        <thead>
+
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr *ngFor="let c of recentCustomers">
+
+            <td>{{c.id}}</td>
+            <td>{{c.customerName}}</td>
+            <td>{{c.email}}</td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>

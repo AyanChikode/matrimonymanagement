@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent {
 
+
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
@@ -25,13 +26,15 @@ export class LoginComponent {
 
 });
 
-  login() {
+ login() {
 
   this.authService
     .login(this.loginForm.value)
     .subscribe({
 
       next: (res: any) => {
+
+        console.log(res);
 
         localStorage.setItem(
           'token',
@@ -43,17 +46,22 @@ export class LoginComponent {
           res.role
         );
 
+        localStorage.setItem(
+          'customerId',
+          String(res.customerId)
+        );
+
         if (res.role === 'ADMIN') {
 
-          this.router.navigate(
-            ['/admin-dashboard']
-          );
+          this.router.navigate([
+            '/admin-dashboard'
+          ]);
 
         } else {
 
-          this.router.navigate(
-            ['/customer-dashboard']
-          );
+          this.router.navigate([
+            '/customer-dashboard'
+          ]);
 
         }
 

@@ -1,1 +1,262 @@
-<p>customer-dashboard works!</p>
+<div class="wrapper">
+
+  <!-- Sidebar -->
+
+  <div class="sidebar">
+
+    <h3>Matrimony</h3>
+
+    <ul>
+
+      <li>
+        Dashboard
+      </li>
+
+      <li routerLink="/create-profile">
+        Create Profile
+      </li>
+
+      <li routerLink="/edit-profile">
+        Edit Profile
+      </li>
+
+      <li routerLink="/search-partner">
+        Search Partner
+      </li>
+
+      <li
+        (click)="downloadBiodata()">
+        Biodata
+      </li>
+
+      <li
+        (click)="logout()">
+        Logout
+      </li>
+
+    </ul>
+
+  </div>
+
+  <!-- Main -->
+
+  <div class="main">
+
+    <!-- Navbar -->
+
+    <div class="navbar-custom">
+
+      <h4>
+
+        Welcome
+
+        {{profile.customerName}}
+
+      </h4>
+
+      <img
+        [src]="profile.profilePhoto"
+        class="profile-pic">
+
+    </div>
+
+    <!-- Profile Completion -->
+
+    <div class="card mt-3">
+
+      <div class="card-body">
+
+        <h5>
+          Profile Completion
+        </h5>
+
+        <div class="progress">
+
+          <div
+            class="progress-bar bg-success"
+            [style.width.%]="profileCompletion">
+
+            {{profileCompletion}}%
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Profile Card -->
+
+    <div class="card mt-3">
+
+      <div class="card-body">
+
+        <div class="row">
+
+          <div class="col-md-3 text-center">
+
+            <img
+              [src]="profile.profilePhoto"
+              class="profile-image">
+
+          </div>
+
+          <div class="col-md-9">
+
+            <h3>
+
+              {{profile.customerName}}
+
+            </h3>
+
+            <p>
+
+              Age :
+              {{profile.age}}
+
+            </p>
+
+            <p>
+
+              Education :
+              {{profile.education}}
+
+            </p>
+
+            <p>
+
+              Occupation :
+              {{profile.occupation}}
+
+            </p>
+
+            <p>
+
+              City :
+              {{profile.city}}
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Recent Profiles -->
+
+    <div class="card mt-4">
+
+      <div class="card-header">
+
+        Recent Profiles
+
+      </div>
+
+      <div class="card-body">
+
+        <table class="table">
+
+          <thead>
+
+            <tr>
+
+              <th>Name</th>
+              <th>Age</th>
+              <th>City</th>
+              <th>Education</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr
+              *ngFor="
+              let p of recentProfiles
+              ">
+
+              <td>
+                {{p.customerName}}
+              </td>
+
+              <td>
+                {{p.age}}
+              </td>
+
+              <td>
+                {{p.city}}
+              </td>
+
+              <td>
+                {{p.education}}
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+    <!-- Recommended Profiles -->
+
+    <div class="row mt-4">
+
+      <div
+        class="col-md-4"
+        *ngFor="
+        let p of recommendedProfiles
+        ">
+
+        <div class="card profile-card">
+
+          <div class="card-body text-center">
+
+            <img
+              [src]="p.profilePhoto"
+              class="recommended-image">
+
+            <h5>
+
+              {{p.customerName}}
+
+            </h5>
+
+            <p>
+
+              {{p.education}}
+
+            </p>
+
+            <p>
+
+              {{p.city}}
+
+            </p>
+
+            <button
+              class="btn btn-primary">
+
+              View Profile
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

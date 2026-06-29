@@ -1,0 +1,73 @@
+<nav class="navbar-custom">
+
+  <div>
+
+    <h4>
+
+      Welcome
+
+      {{customerName}}
+
+    </h4>
+
+  </div>
+
+  <div class="dropdown">
+
+    <button
+      class="btn btn-primary dropdown-toggle"
+      data-bs-toggle="dropdown">
+
+      Account
+
+    </button>
+
+    <ul class="dropdown-menu dropdown-menu-end">
+
+      <li>
+
+        <a
+          class="dropdown-item"
+          routerLink="/my-profile">
+
+          My Profile
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a
+          class="dropdown-item"
+          routerLink="/create-profile">
+
+          Edit Profile
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <hr>
+
+      </li>
+
+      <li>
+
+        <button
+          class="dropdown-item text-danger"
+          (click)="logout()">
+
+          Logout
+
+        </button>
+
+      </li>
+
+    </ul>
+
+  </div>
+
+</nav>

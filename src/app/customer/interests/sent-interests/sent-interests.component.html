@@ -1,1 +1,80 @@
-<p>sent-interests works!</p>
+<div class="container mt-4">
+
+<h3 class="mb-4">
+
+Sent Interests ❤️
+
+</h3>
+
+<table class="table table-bordered table-hover">
+
+<thead class="table-dark">
+
+<tr>
+
+<th>#</th>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Status</th>
+
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+
+
+<tbody>
+
+<tr *ngFor="let item of interests; let i=index">
+
+<td>{{i+1}}</td>
+
+<td>{{item.toCustomer?.customerName}}</td>
+
+<td>{{item.toCustomer?.email}}</td>
+
+<td>
+
+<span class="badge bg-warning"
+*ngIf="item.status=='PENDING'">
+
+Pending
+
+</span>
+
+<span class="badge bg-success"
+*ngIf="item.status=='ACCEPTED'">
+
+Accepted
+
+</span>
+
+<span class="badge bg-danger"
+*ngIf="item.status=='REJECTED'">
+
+Rejected
+
+</span>
+
+</td>
+
+<td>
+
+{{item.createdAt | date:'dd-MM-yyyy'}}
+
+</td>
+
+</tr>
+
+</tbody>
+
+
+
+</table>
+
+</div>

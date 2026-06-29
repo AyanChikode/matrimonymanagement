@@ -15,7 +15,7 @@ import { SearchPartnerComponent } from './customer/search-partner/search-partner
 import { BiodataComponent } from './customer/biodata/biodata.component';
 import { CustomerManagementComponent } from './admin/customer-management/customer-management.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 import { CustomerDashboardComponent } from './pages/customer-dashboard/customer-dashboard.component';
 import { NewPasswordComponent } from './auth/new-password/new-password.component';
@@ -32,6 +32,11 @@ import { ProfileViewComponent } from './customer/profile-view/profile-view.compo
 import { PartnerProfileComponent } from './customer/partner-profile/partner-profile.component';
 import { SentInterestsComponent } from './customer/interests/sent-interests/sent-interests.component';
 import { ReceivedInterestsComponent } from './customer/interests/received-interests/received-interests.component';
+import { CustomerLayoutComponent } from './layouts/customer-layout/customer-layout.component';
+import { SidebarComponent } from './customer/sidebar/sidebar.component';
+import { NavbarComponent } from './customer/navbar/navbar.component';
+import { MyProfileComponent } from './customer/my-profile/my-profile.component';
+import { SearchProfilesComponent } from './customer/search-profiles/search-profiles.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,12 +66,18 @@ import { ReceivedInterestsComponent } from './customer/interests/received-intere
     PartnerProfileComponent,
     SentInterestsComponent,
     ReceivedInterestsComponent,
+    CustomerLayoutComponent,
+    SidebarComponent,
+    NavbarComponent,
+    MyProfileComponent,
+    SearchProfilesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule
     
   ],
   providers: [

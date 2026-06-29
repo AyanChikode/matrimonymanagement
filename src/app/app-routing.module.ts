@@ -11,6 +11,11 @@ import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.
 import { NewPasswordComponent } from './auth/new-password/new-password.component';
 import { CustomerProfileWizardComponent } from './customer-profile/customer-profile-wizard/customer-profile-wizard.component';
 import { PartnerProfileComponent } from './customer/partner-profile/partner-profile.component';
+import { CustomerLayoutComponent } from './layouts/customer-layout/customer-layout.component';
+import { MyProfileComponent } from './customer/my-profile/my-profile.component';
+import { SearchProfilesComponent } from './customer/search-profiles/search-profiles.component';
+import { ProfileViewComponent } from './customer/profile-view/profile-view.component';
+import { SentInterestsComponent } from './customer/interests/sent-interests/sent-interests.component';
 
 const routes: Routes = [
 
@@ -26,15 +31,54 @@ const routes: Routes = [
 
   { path:'admin-dashboard', component: AdminDashboardComponent },
 
-  { path:'customer-dashboard', component: CustomerDashboardComponent },
+   {
+    path: '',
+    component: CustomerLayoutComponent,
+    children: [
+
+      {
+        path: 'customer-dashboard',
+        component: CustomerDashboardComponent
+      },
+
+      {
+        path: 'my-profile',
+        component: MyProfileComponent
+      },
+
+      {
+        path: 'create-profile',
+        component: CustomerProfileWizardComponent
+      },
+
+      {
+        path: 'partner/:id',
+        component: PartnerProfileComponent
+      },
+
+      {
+  path:'search-profiles',
+  component:SearchProfilesComponent
+      },
+
+     
+{
+  path:'profile/:id',
+  component: ProfileViewComponent
+},
+
+{
+  path: 'sent-interests',
+  component: SentInterestsComponent
+}
+
+    ]
+  },
   
   { path:'forgot-password', component: ForgotPasswordComponent },
 
   { path: 'new-password',component: NewPasswordComponent },
 
-  { path:'create-profile',component:CustomerProfileWizardComponent },
-
-  { path:'partner/:id', component:PartnerProfileComponent }
 
 ];
 

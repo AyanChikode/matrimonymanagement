@@ -1,0 +1,15 @@
+.card{
+    border-radius:15px;
+}
+
+img{
+    border-radius:15px;
+}
+
+p{
+    margin-bottom:10px;
+}
+
+h2{
+    font-weight:600;
+}

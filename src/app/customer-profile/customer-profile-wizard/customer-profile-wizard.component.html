@@ -75,65 +75,77 @@
 
   <div class="row">
 
-    <div class="col-md-4 mb-3">
+<div class="col-md-4 mb-3">
 
-      <label>Religion</label>
+  <label>Religion</label>
 
-      <select
-        class="form-control"
-        formControlName="religion_id">
+  <select
+    class="form-control"
+    formControlName="religion_id">
 
-        <option
-          *ngFor="let r of religions"
-          [value]="r.religion_id">
+    <option value="">
+      Select Religion
+    </option>
 
-          {{r.religion_name}}
+    <option
+      *ngFor="let r of religions"
+      [value]="r.id">
 
-        </option>
+      {{r.religion_name}}
 
-      </select>
+    </option>
 
-    </div>
+  </select>
 
-    <div class="col-md-4 mb-3">
+</div>
 
-      <label>Caste</label>
+<div class="col-md-4 mb-3">
 
-      <select
-        class="form-control"
-        formControlName="caste_id">
+  <label>Caste</label>
 
-        <option
-          *ngFor="let c of castes"
-          [value]="c.caste_id">
+  <select
+    class="form-control"
+    formControlName="caste_id">
 
-          {{c.caste_name}}
+    <option value="">
+      Select Caste
+    </option>
 
-        </option>
+    <option
+      *ngFor="let c of castes"
+      [value]="c.id">
 
-      </select>
+      {{c.caste_name}}
 
-    </div>
+    </option>
 
-    <div class="col-md-4 mb-3">
+  </select>
 
-      <label>Subcaste</label>
+</div>
 
-      <select
-        class="form-control"
-        formControlName="subcaste_id">
+<div class="col-md-4 mb-3">
 
-        <option
-          *ngFor="let s of subcastes"
-          [value]="s.subcaste_id">
+  <label>Subcaste</label>
 
-          {{s.subcaste_name}}
+  <select
+    class="form-control"
+    formControlName="subcaste_id">
 
-        </option>
+    <option value="">
+      Select Subcaste
+    </option>
 
-      </select>
+    <option
+      *ngFor="let s of subcastes"
+      [value]="s.id">
 
-    </div>
+      {{s.subcaste_Name}}
+
+    </option>
+
+  </select>
+
+</div>
 
   </div>
 
@@ -144,85 +156,101 @@
 
   <div class="row">
 
-    <div class="col-md-6 mb-3">
+   <div class="col-md-6 mb-3">
 
-      <label>State</label>
+  <label>State</label>
 
-      <select
-        class="form-control"
-        formControlName="state_id">
+  <select
+    class="form-control"
+    formControlName="state_id">
 
-        <option
-          *ngFor="let s of states"
-          [value]="s.state_id">
+    <option value="">
+      Select State
+    </option>
 
-          {{s.state_name}}
+    <option
+      *ngFor="let s of states"
+      [value]="s.id">
 
-        </option>
+      {{s.name}}
 
-      </select>
+    </option>
 
-    </div>
+  </select>
 
-    <div class="col-md-6 mb-3">
+</div>
 
-      <label>District</label>
+<div class="col-md-6 mb-3">
 
-      <select
-        class="form-control"
-        formControlName="district_id">
+  <label>District</label>
 
-        <option
-          *ngFor="let d of districts"
-          [value]="d.district_id">
+  <select
+    class="form-control"
+    formControlName="district_id">
 
-          {{d.district_name}}
+    <option value="">
+      Select District
+    </option>
 
-        </option>
+    <option
+      *ngFor="let d of districts"
+      [value]="d.id">
 
-      </select>
+      {{d.name}}
 
-    </div>
+    </option>
 
-    <div class="col-md-6 mb-3">
+  </select>
 
-      <label>Taluka</label>
+</div>
 
-      <select
-        class="form-control"
-        formControlName="taluka_id">
+<div class="col-md-6 mb-3">
 
-        <option
-          *ngFor="let t of talukas"
-          [value]="t.taluka_id">
+  <label>Taluka</label>
 
-          {{t.taluka_name}}
+  <select
+    class="form-control"
+    formControlName="taluka_id">
 
-        </option>
+    <option value="">
+      Select Taluka
+    </option>
 
-      </select>
+    <option
+      *ngFor="let t of talukas"
+      [value]="t.id">
 
-    </div>
+      {{t.name}}
 
-    <div class="col-md-6 mb-3">
+    </option>
 
-      <label>Village</label>
+  </select>
 
-      <select
-        class="form-control"
-        formControlName="village_id">
+</div>
 
-        <option
-          *ngFor="let v of villages"
-          [value]="v.village_id">
+<div class="col-md-6 mb-3">
 
-          {{v.village_name}}
+  <label>Village</label>
 
-        </option>
+  <select
+    class="form-control"
+    formControlName="village_id">
 
-      </select>
+    <option value="">
+      Select Village
+    </option>
 
-    </div>
+    <option
+      *ngFor="let v of villages"
+      [value]="v.id">
+
+      {{v.name}}
+
+    </option>
+
+  </select>
+
+</div>
 
     <div class="col-md-12 mb-3">
 

@@ -1,0 +1,172 @@
+<div class="container mt-4">
+
+  <div class="card">
+
+    <div class="card-header">
+
+      <h4>
+        Search Profiles
+      </h4>
+
+    </div>
+
+    <div class="card-body">
+
+      <div class="row">
+
+        <div class="col-md-4">
+
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search Name"
+            [(ngModel)]="searchName">
+
+        </div>
+
+        <div class="col-md-3">
+
+          <input
+            type="text"
+            class="form-control"
+            placeholder="City"
+            [(ngModel)]="searchCity">
+
+        </div>
+
+        <div class="col-md-3">
+
+          <select
+            class="form-control"
+            [(ngModel)]="searchGender">
+
+            <option value="">
+              All Gender
+            </option>
+
+            <option value="Male">
+              Male
+            </option>
+
+            <option value="Female">
+              Female
+            </option>
+
+          </select>
+
+        </div>
+
+        <div class="col-md-2">
+
+          <button
+            class="btn btn-success w-100"
+            (click)="searchProfiles()">
+
+            Search
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="row mt-4">
+
+    <div
+      class="col-md-4 mb-3"
+      *ngFor="let profile of filteredProfiles">
+
+      <div class="card h-100 shadow">
+
+        <img
+          [src]="profile.profilePhoto"
+          class="card-img-top"
+          height="250">
+
+        <div class="card-body">
+
+          <h5>
+
+            {{profile.customerName}}
+
+          </h5>
+
+          <p>
+
+            Age :
+            {{profile.age}}
+
+          </p>
+
+          <p>
+
+            Education :
+            {{profile.education}}
+
+          </p>
+
+          <p>
+
+            Occupation :
+            {{profile.occupation}}
+
+          </p>
+
+          <p>
+
+            City :
+            {{profile.city}}
+
+          </p>
+
+        </div>
+
+        <div class="card-footer">
+
+         <div class="card" *ngFor="let profile of filteredProfiles">
+
+  <div class="card-body">
+
+    <h5>{{profile.customerName}}</h5>
+
+    <p>{{profile.age}} Years</p>
+
+    <p>{{profile.city}}</p>
+
+   <div class="card-footer">
+
+<button
+class="btn btn-primary w-100"
+[routerLink]="['/profile',profile.id]">
+
+View Profile
+
+</button>
+
+<button
+class="btn btn-success w-100 mt-2"
+(click)="sendInterest(profile)">
+
+❤️ Send Interest
+
+</button>
+
+</div>
+
+  </div>
+
+</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

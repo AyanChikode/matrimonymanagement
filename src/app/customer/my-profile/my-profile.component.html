@@ -1,0 +1,41 @@
+<div class="card shadow">
+
+  <div class="card-body">
+
+    <div class="row">
+
+      <div class="col-md-3">
+
+        <img
+          [src]="profile?.profilePhoto"
+          class="img-fluid rounded">
+
+      </div>
+
+      <div class="col-md-9">
+
+        <h2>
+
+          {{profile?.customerName}}
+
+        </h2>
+
+        <p>Age : {{profile?.age}}</p>
+
+        <p>Education : {{profile?.education}}</p>
+
+        <p>Occupation : {{profile?.occupation}}</p>
+
+        <p>City : {{profile?.city}}</p>
+
+        <p>Religion :
+          {{profile?.religion_id?.religionName}}
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

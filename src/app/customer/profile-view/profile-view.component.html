@@ -1,1 +1,142 @@
-<p>profile-view works!</p>
+<div class="container mt-4" *ngIf="profile">
+
+  <div class="card shadow-lg">
+
+    <div class="card-body">
+
+      <div class="row">
+
+        <!-- Photo -->
+
+        <div class="col-md-4 text-center">
+
+          <img
+            [src]="profile.profilePhoto || 'assets/default-user.png'"
+            class="img-fluid rounded shadow"
+            style="height:350px;width:100%;object-fit:cover;">
+
+        </div>
+
+        <!-- Details -->
+
+        <div class="col-md-8">
+
+          <h2 class="mb-3">
+            {{profile.customerName}}
+          </h2>
+
+          <hr>
+
+          <div class="row">
+
+            <div class="col-md-6">
+
+              <p>
+                <strong>Age :</strong>
+                {{profile.age}}
+              </p>
+
+              <p>
+                <strong>Gender :</strong>
+                {{profile.gender}}
+              </p>
+
+              <p>
+                <strong>Height :</strong>
+                {{profile.height}}
+              </p>
+
+              <p>
+                <strong>Marital Status :</strong>
+                {{profile.maritalStatus}}
+              </p>
+
+              <p>
+                <strong>Religion :</strong>
+                {{profile.religion_id?.religionName}}
+              </p>
+
+              <p>
+                <strong>Caste :</strong>
+                {{profile.caste_id?.casteName}}
+              </p>
+
+            </div>
+
+            <div class="col-md-6">
+
+              <p>
+                <strong>Education :</strong>
+                {{profile.education}}
+              </p>
+
+              <p>
+                <strong>Occupation :</strong>
+                {{profile.occupation}}
+              </p>
+
+              <p>
+                <strong>Income :</strong>
+                ₹{{profile.income}}
+              </p>
+
+              <p>
+                <strong>Phone :</strong>
+                {{profile.phoneNo}}
+              </p>
+
+              <p>
+                <strong>City :</strong>
+                {{profile.city}}
+              </p>
+
+              <p>
+                <strong>State :</strong>
+                {{profile.state_id?.stateName}}
+              </p>
+
+            </div>
+
+          </div>
+
+          <hr>
+
+          <h5>About Me</h5>
+
+          <p>
+            {{profile.bio}}
+          </p>
+
+          <hr>
+
+          <button
+            class="btn btn-success me-2">
+
+            ❤️ Send Interest
+
+          </button>
+
+          <button
+            class="btn btn-warning me-2">
+
+            ⭐ Shortlist
+
+          </button>
+
+          <button
+            class="btn btn-secondary"
+            routerLink="/search-profiles">
+
+            ← Back
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

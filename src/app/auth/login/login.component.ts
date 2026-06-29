@@ -28,44 +28,32 @@ export class LoginComponent {
 
  login() {
 
-  this.authService
-    .login(this.loginForm.value)
-    .subscribe({
+  this.authService.login(this.loginForm.value)
+.subscribe({
 
-      next: (res: any) => {
+  next:(res:any)=>{
 
-        console.log(res);
+    console.log(res);
 
-        localStorage.setItem(
-          'token',
-          res.token
-        );
+    localStorage.setItem(
+      'token',
+      res.token
+    );
 
-        localStorage.setItem(
-          'role',
-          res.role
-        );
+    localStorage.setItem(
+      'customerId',
+      res.data.id.toString()
+    );
 
-        localStorage.setItem(
-          'customerId',
-          String(res.customerId)
-        );
+    localStorage.setItem(
+      'customerName',
+      res.data.customerName
+    );
 
-        if (res.role === 'ADMIN') {
-
-          this.router.navigate([
-            '/admin-dashboard'
-          ]);
-
-        } else {
-
-          this.router.navigate([
-            '/customer-dashboard'
-          ]);
-
-        }
-
-      },
+    this.router.navigate([
+      '/customer-dashboard'
+    ]);
+  },
 
       error: () => {
 

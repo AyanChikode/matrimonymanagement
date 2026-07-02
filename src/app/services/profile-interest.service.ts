@@ -30,4 +30,17 @@ export class ProfileInterestService {
   rejectInterest(id: number): Observable<any> {
     return this.http.put(`${this.apiUrl}/reject/${id}`, {});
   }
+
+  getMatches(customerId:number){
+
+  return this.http.get<any[]>(
+
+    `${this.apiUrl}/matches/${customerId}`
+
+  );
+
+}
+
+  
+  
 }

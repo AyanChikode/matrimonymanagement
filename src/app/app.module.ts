@@ -37,6 +37,16 @@ import { SidebarComponent } from './customer/sidebar/sidebar.component';
 import { NavbarComponent } from './customer/navbar/navbar.component';
 import { MyProfileComponent } from './customer/my-profile/my-profile.component';
 import { SearchProfilesComponent } from './customer/search-profiles/search-profiles.component';
+import { MutualMatchesComponent } from './customer/mutual-matches/mutual-matches.component';
+import { ChatComponent } from './customer/chat/chat.component';
+import { NotificationsComponent } from './customer/notifications/notifications.component';
+import { AdminCustomersComponent } from './pages/admin-customers/admin-customers.component';
+import { AdminProfilesComponent } from './pages/admin-profiles/admin-profiles.component';
+import { AdminInterestsComponent } from './pages/admin-interests/admin-interests.component';
+import { AdminChatComponent } from './pages/admin-chat/admin-chat.component';
+import { AdminNotificationsComponent } from './pages/admin-notifications/admin-notifications.component';
+import { AdminReportsComponent } from './pages/admin-reports/admin-reports.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,6 +81,16 @@ import { SearchProfilesComponent } from './customer/search-profiles/search-profi
     NavbarComponent,
     MyProfileComponent,
     SearchProfilesComponent,
+    MutualMatchesComponent,
+    ChatComponent,
+    NotificationsComponent,
+    AdminCustomersComponent,
+    AdminProfilesComponent,
+    AdminInterestsComponent,
+    AdminChatComponent,
+    AdminNotificationsComponent,
+    AdminReportsComponent,
+    AdminLayoutComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,124 @@
-<p>received-interests works!</p>
+<div class="container mt-4">
+
+    <h3 class="mb-4">
+        Received Interests
+    </h3>
+
+    <table class="table table-bordered table-hover">
+
+        <thead class="table-dark">
+
+            <tr>
+
+                <th>Photo</th>
+
+                <th>Name</th>
+
+                <th>Email</th>
+
+                <th>Phone</th>
+
+                <th>Status</th>
+
+                <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let interest of receivedInterests">
+
+                <td>
+
+                    <img
+                        [src]="interest.fromCustomer.profilePhoto"
+                        width="80"
+                        height="80"
+                        class="rounded-circle"
+                    >
+
+                </td>
+
+                <td>
+
+                    {{interest.fromCustomer.customerName}}
+
+                </td>
+
+                <td>
+
+                    {{interest.fromCustomer.email}}
+
+                </td>
+
+                <td>
+
+                    {{interest.fromCustomer.phoneNo}}
+
+                </td>
+
+                <td>
+
+                    <span
+                        class="badge bg-warning"
+                        *ngIf="interest.status=='PENDING'">
+
+                        Pending
+
+                    </span>
+
+                    <span
+                        class="badge bg-success"
+                        *ngIf="interest.status=='ACCEPTED'">
+
+                        Accepted
+
+                    </span>
+
+                    <span
+                        class="badge bg-danger"
+                        *ngIf="interest.status=='REJECTED'">
+
+                        Rejected
+
+                    </span>
+
+                </td>
+
+                <td>
+
+                    <button
+
+                        *ngIf="interest.status=='PENDING'"
+
+                        class="btn btn-success btn-sm me-2"
+
+                        (click)="accept(interest.id)">
+
+                        Accept
+
+                    </button>
+
+                    <button
+
+                        *ngIf="interest.status=='PENDING'"
+
+                        class="btn btn-danger btn-sm"
+
+                        (click)="reject(interest.id)">
+
+                        Reject
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>

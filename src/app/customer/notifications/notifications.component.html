@@ -1,0 +1,70 @@
+<div class="container mt-4">
+
+<div class="card shadow">
+
+<div class="card-header bg-primary text-white">
+
+<h5>
+
+🔔 Notifications
+
+<span class="badge bg-danger float-end">
+
+{{unread}}
+
+</span>
+
+</h5>
+
+</div>
+
+<div class="card-body">
+
+<div
+*ngFor="let n of notifications"
+class="border rounded p-3 mb-3">
+
+<h6>
+
+{{n.title}}
+
+<span
+class="badge bg-success ms-2"
+*ngIf="n.isRead">
+
+Read
+
+</span>
+
+</h6>
+
+<p>
+
+{{n.message}}
+
+</p>
+
+<small>
+
+{{n.createdAt}}
+
+</small>
+
+<br><br>
+
+<button
+class="btn btn-sm btn-primary"
+*ngIf="!n.isRead"
+(click)="read(n.id)">
+
+Mark as Read
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>

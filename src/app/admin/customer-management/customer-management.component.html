@@ -1,1 +1,79 @@
-<p>customer-management works!</p>
+<div class="container mt-4">
+
+<h3>Customer Management</h3>
+
+<table class="table table-bordered table-hover">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr *ngFor="let c of customers">
+
+<td>{{c.id}}</td>
+
+<td>{{c.customerName}}</td>
+
+<td>{{c.email}}</td>
+
+<td>
+
+<span
+class="badge bg-success"
+*ngIf="!c.isBlocked">
+
+Active
+
+</span>
+
+<span
+class="badge bg-danger"
+*ngIf="c.isBlocked">
+
+Blocked
+
+</span>
+
+</td>
+
+<td>
+
+<button
+*ngIf="!c.isBlocked"
+class="btn btn-danger btn-sm"
+(click)="block(c.id)">
+
+Block
+
+</button>
+
+<button
+*ngIf="c.isBlocked"
+class="btn btn-success btn-sm"
+(click)="unblock(c.id)">
+
+Unblock
+
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>

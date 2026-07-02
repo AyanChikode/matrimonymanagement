@@ -16,6 +16,18 @@ import { MyProfileComponent } from './customer/my-profile/my-profile.component';
 import { SearchProfilesComponent } from './customer/search-profiles/search-profiles.component';
 import { ProfileViewComponent } from './customer/profile-view/profile-view.component';
 import { SentInterestsComponent } from './customer/interests/sent-interests/sent-interests.component';
+import { ReceivedInterestsComponent } from './customer/interests/received-interests/received-interests.component';
+import { MutualMatchesComponent } from './customer/mutual-matches/mutual-matches.component';
+import { ChatComponent } from './customer/chat/chat.component';
+import { NotificationsComponent } from './customer/notifications/notifications.component';
+import { AdminReportsComponent } from './pages/admin-reports/admin-reports.component';
+import { AdminNotificationsComponent } from './pages/admin-notifications/admin-notifications.component';
+import { AdminChatComponent } from './pages/admin-chat/admin-chat.component';
+import { AdminInterestsComponent } from './pages/admin-interests/admin-interests.component';
+import { AdminProfilesComponent } from './pages/admin-profiles/admin-profiles.component';
+import { AdminCustomersComponent } from './pages/admin-customers/admin-customers.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { CustomerManagementComponent } from './admin/customer-management/customer-management.component';
 
 const routes: Routes = [
 
@@ -30,6 +42,49 @@ const routes: Routes = [
   { path:'otp-verification', component: OtpVerificationComponent },
 
   { path:'admin-dashboard', component: AdminDashboardComponent },
+
+  {
+  path: '',
+  component: AdminLayoutComponent,
+  children: [
+
+    {
+      path:'admin-dashboard',
+      component:AdminDashboardComponent
+    },
+
+   {
+  path:'admin-customers',
+  component:CustomerManagementComponent
+},
+
+    {
+      path:'admin-profiles',
+      component:AdminProfilesComponent
+    },
+
+    {
+      path:'admin-interests',
+      component:AdminInterestsComponent
+    },
+
+    {
+      path:'admin-chat',
+      component:AdminChatComponent    
+    },
+
+    {
+      path:'admin-notifications',
+      component:AdminNotificationsComponent
+    },
+
+    {
+      path:'admin-reports',
+      component:AdminReportsComponent
+    }
+
+  ]
+},
 
    {
     path: '',
@@ -70,6 +125,24 @@ const routes: Routes = [
 {
   path: 'sent-interests',
   component: SentInterestsComponent
+},
+
+{
+  path: 'received-interests',
+  component: ReceivedInterestsComponent
+},
+{
+ path:'mutual-matches',
+ component:MutualMatchesComponent
+},
+
+{
+  path: 'chat', component: ChatComponent
+},
+
+{
+ path:'notifications',
+ component:NotificationsComponent
 }
 
     ]

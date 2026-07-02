@@ -16,21 +16,12 @@ export class NavbarComponent {
 
   ngOnInit(): void {
 
-    const profile =
-      JSON.parse(
-        localStorage.getItem('profile') || '{}'
-      );
-
-    if(profile.customerName){
-
-      this.customerName =
-        profile.customerName;
-
-    }
+    this.customerName =
+      localStorage.getItem('customerName') || 'Customer';
 
   }
 
-  logout(){
+  logout() {
 
     localStorage.clear();
 

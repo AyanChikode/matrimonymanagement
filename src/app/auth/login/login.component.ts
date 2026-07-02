@@ -26,44 +26,39 @@ export class LoginComponent {
 
 });
 
- login() {
+login() {
 
   this.authService.login(this.loginForm.value)
-.subscribe({
+  .subscribe({
 
-  next:(res:any)=>{
+    next: (res: any) => {
 
-    console.log(res);
+      console.log(res);
 
-    localStorage.setItem(
-      'token',
-      res.token
-    );
+      localStorage.setItem('token', res.token);
+      localStorage.setItem('customerId', res.data.id.toString());
+      localStorage.setItem('customerName', res.data.customerName);
+      localStorage.setItem('role', res.data.role);
 
-    localStorage.setItem(
-      'customerId',
-      res.data.id.toString()
-    );
+      if (res.data.role === 'ADMIN') {
 
-    localStorage.setItem(
-      'customerName',
-      res.data.customerName
-    );
+        this.router.navigate(['/admin-dashboard']);
 
-    this.router.navigate([
-      '/customer-dashboard'
-    ]);
-  },
+      } else {
 
-      error: () => {
-
-        alert(
-          'Invalid Credentials'
-        );
+        this.router.navigate(['/customer-dashboard']);
 
       }
 
-    });
+    },
+
+    error: () => {
+
+      alert('Invalid Credentials');
+
+    }
+
+  });
 
 }
 }

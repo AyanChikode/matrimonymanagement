@@ -1,0 +1,93 @@
+<div class="container mt-4">
+
+<h3 class="mb-4 text-center">
+
+❤️ Mutual Matches
+
+</h3>
+
+<div class="row">
+
+<div
+class="col-md-4 mb-4"
+*ngFor="let match of matches">
+
+<div class="card shadow">
+
+<div class="card-body text-center">
+
+<img
+
+*ngIf="match.fromCustomer.id!=customerId"
+
+[src]="match.fromCustomer.profilePhoto"
+
+class="rounded-circle mb-3"
+
+width="120"
+
+height="120">
+
+<img
+
+*ngIf="match.toCustomer.id!=customerId"
+
+[src]="match.toCustomer.profilePhoto"
+
+class="rounded-circle mb-3"
+
+width="120"
+
+height="120">
+
+<h5 *ngIf="match.fromCustomer.id!=customerId">
+
+{{match.fromCustomer.customerName}}
+
+</h5>
+
+<h5 *ngIf="match.toCustomer.id!=customerId">
+
+{{match.toCustomer.customerName}}
+
+</h5>
+
+<p class="text-success">
+
+Match Accepted ❤️
+
+</p>
+
+<button
+
+class="btn btn-primary"
+
+*ngIf="match.fromCustomer.id!=customerId"
+
+[routerLink]="['/profile',match.fromCustomer.id]">
+
+View Profile
+
+</button>
+
+<button
+
+class="btn btn-primary"
+
+*ngIf="match.toCustomer.id!=customerId"
+
+[routerLink]="['/profile',match.fromCustomer.profilePhoto]">
+
+View Profile
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
